@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+</head>
+<body ng-app="library">
+
+
+
+<div >
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p data-ng-bind="name"></p>
+  
+</div>
+    <p>All users: <a href="/user">here</a></p>
+    <p>All authors: <a href="/author">here</a></p>
+    <p>All books: <a href="/book">here</a></p>
+    <p>All reservations: <a href="/reservation">here</a></p>
+</body>
+</html>
