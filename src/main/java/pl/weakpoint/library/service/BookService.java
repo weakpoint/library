@@ -1,5 +1,9 @@
 package pl.weakpoint.library.service;
 
-public interface BookService {
+import java.util.List;
 
+import pl.weakpoint.library.model.Book;
+
+public interface BookService {
+	List<Book> getAllBooks();
 }

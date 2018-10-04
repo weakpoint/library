@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.weakpoint.library.model.Book;
-import pl.weakpoint.library.repository.BookRepository;
 import pl.weakpoint.library.service.BookService;
 
 @RestController
@@ -21,6 +20,6 @@ public class BookController {
 	
 	@RequestMapping(BookRequestMapping.BOOK_ROOT)
 	public List<Book> getAllBooks(){
-		return null;//bookService.findAll();
+		return bookService.getAllBooks();
 	}
 }

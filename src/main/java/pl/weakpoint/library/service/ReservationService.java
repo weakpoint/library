@@ -1,5 +1,9 @@
 package pl.weakpoint.library.service;
 
-public interface ReservationService {
+import java.util.List;
 
+import pl.weakpoint.library.model.Reservation;
+
+public interface ReservationService {
+	List<Reservation> getAllReservations();
 }

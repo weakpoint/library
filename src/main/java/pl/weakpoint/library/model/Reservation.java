@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
@@ -21,7 +21,7 @@ public class Reservation implements Serializable{
 	
 	@Id
 	@NotNull
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	@NotNull
@@ -29,7 +29,6 @@ public class Reservation implements Serializable{
 	
     @OneToMany
     @NotNull
-    @JoinColumn(name="isbn")
 	private List<Book> books;
 	
 	@Version
