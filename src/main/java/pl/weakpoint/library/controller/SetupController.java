@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import pl.weakpoint.library.model.Author;
 import pl.weakpoint.library.model.Book;
@@ -17,7 +18,7 @@ import pl.weakpoint.library.repository.BookRepository;
 import pl.weakpoint.library.repository.ReservationRepository;
 import pl.weakpoint.library.repository.UserRepository;
 
-@Controller
+@RestController
 public class SetupController {
 	
 private BookRepository bookRepository;
@@ -34,8 +35,12 @@ private AuthorRepository authorRepository;
 	this.authorRepository = authorRepository;
 }
 	
-	@RequestMapping("/")
+	@RequestMapping("/init")
 	public String setupDB(){
+		Book book = bookRepository.getOne("00001");
+		if (book != null) {
+			return "juuu";
+		}
 		List<User> users = setupUsers();
 		List<Author> authors = setupAuthors();
 		List<Book> books = setupBooks(authors);
