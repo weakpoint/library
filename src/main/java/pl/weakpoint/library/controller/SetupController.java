@@ -44,7 +44,7 @@ private AuthorRepository authorRepository;
 		List<Author> authors = setupAuthors();
 		List<Book> books = setupBooks(authors);
 		setupReservations(users, books);
-		return "index.html";
+		return "<a href=\"/\">Main</a>";
 	}
 
 
@@ -76,7 +76,7 @@ private AuthorRepository authorRepository;
 		books.add(createBook("00002", "BookName1a", authors.get(0)));
 		
 		books.add(createBook("00003", "BookName2", authors.get(1)));
-		books.add(createBook("00004", "BookName2a", authors.get(1)));
+		books.add(createBook("00004", "BookName2a", authors.get(0), authors.get(1)));
 		
 		books.add(createBook("00005", "BookName3a", authors.get(2)));
 		
@@ -117,7 +117,7 @@ private AuthorRepository authorRepository;
 		return author;
 	}
 	
-	private Book createBook(String isbn, String name, Author author){
+	private Book createBook(String isbn, String name, Author... author){
 		Book book = new Book();
 		book.setIsbn(isbn);
 		book.setName(name);

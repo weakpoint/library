@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.weakpoint.library.model.User;
@@ -17,13 +18,13 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("")
+	@RequestMapping(value = UserRequestMapping.GET_ALL, method = RequestMethod.GET)
 	public List<User> getAllUsers(){
 		return userService.getAllUsers();
 	}
 
-	@RequestMapping("/{name}")
-	public void addUser(@PathVariable(value="name") String name){
-		userService.createUser(name);
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public User getUser(@PathVariable(value="id") String id){
+		return userService.getUserById(id);
 	}
 }

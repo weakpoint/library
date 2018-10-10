@@ -26,7 +26,11 @@ app.config(function($routeProvider, $locationProvider) {
     .when("/author", {
         templateUrl : "view/author.html",
         controller: "authorCtrl"
-    }).otherwise({
+    })
+    .when("/error", {
+        templateUrl : "error.html",
+    })
+    .otherwise({
 		redirectTo : '/'
 	});
 });

@@ -29,7 +29,7 @@ public class Reservation implements Serializable{
 	
 	@NotNull
 	@OneToOne
-	@JoinColumn(name="id")
+	@JoinColumn(referencedColumnName="id")
 	private User owner;
 	
 	@ManyToMany

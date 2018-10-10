@@ -35,4 +35,11 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findAll();
 	}
 
+
+	@Override
+	public User getUserById(String id) {
+		return userRepository.getOne(id);
+		
+	}
+
 }

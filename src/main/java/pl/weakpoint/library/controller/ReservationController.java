@@ -16,7 +16,7 @@ public class ReservationController {
 	@Autowired
 	private ReservationService reservationService;
 
-	@RequestMapping("")
+	@RequestMapping(ReservationRequestMapping.GET_ALL)
 	public List<Reservation> getAllReservations() {
 		return reservationService.getAllReservations();
 	}

@@ -10,6 +10,7 @@ import pl.weakpoint.library.model.Book;
 import pl.weakpoint.library.service.BookService;
 
 @RestController
+@RequestMapping(BookRequestMapping.BOOK_ROOT)
 public class BookController {
 	private BookService bookService;
 	
@@ -18,7 +19,7 @@ public class BookController {
         this.bookService = bookService;
     }
 	
-	@RequestMapping(BookRequestMapping.BOOK_ROOT)
+	@RequestMapping(BookRequestMapping.GET_ALL)
 	public List<Book> getAllBooks(){
 		return bookService.getAllBooks();
 	}

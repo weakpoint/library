@@ -21,6 +21,7 @@ public class Book implements Serializable{
 	@NotNull
 	private String isbn;
 	
+	@NotNull
 	private String name;
 	
 	

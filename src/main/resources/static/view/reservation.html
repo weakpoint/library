@@ -1,1 +1,26 @@
 <h1>Reservations: </h1>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Owner</th>
+			<th>Books</th>
+			<th>Version</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="reservation in reservations">
+			<td>{{reservation.id}}</td>
+			<td><a href="/user/{{reservation.owner.id}}">{{reservation.owner.firstName + " " + reservation.owner.lastName}}</a></td>
+			<td>
+				<ul>
+					<li ng-repeat="book in reservation.books">
+						<a href="/book/{{book.isbn}}">{{book.name}}</a>
+					</li>
+				</ul>
+			</td>
+			<td>{{reservation.version}}</td>
+		</tr>
+	</tbody>
+</table>

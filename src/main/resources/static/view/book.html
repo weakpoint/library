@@ -1,1 +1,26 @@
 <h1>Books: </h1>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>ISBN</th>
+			<th>Name</th>
+			<th>Authors</th>
+			<th>Version</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="book in books">
+			<td>{{book.isbn}}</td>
+			<td>{{book.name}}</td>
+			<td>
+				<ul>
+					<li ng-repeat="author in book.authors">
+						<a href="/author/{{author.id}}">{{author.name + " " + author.lastName}}</a>
+					</li>
+				</ul>
+			</td>
+			<td>{{book.version}}</td>
+		</tr>
+	</tbody>
+</table>
