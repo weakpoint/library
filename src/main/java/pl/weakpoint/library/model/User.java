@@ -20,7 +20,7 @@ public class User implements Serializable {
     
     @Id
     @NotNull
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="UserSeq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     
     /** The email. */

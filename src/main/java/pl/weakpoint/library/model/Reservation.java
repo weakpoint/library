@@ -24,7 +24,7 @@ public class Reservation implements Serializable{
 	
 	@Id
 	@NotNull
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="ReservationSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@NotNull
