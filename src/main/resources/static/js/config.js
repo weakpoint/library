@@ -1,20 +1,32 @@
 'use strict';
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
+	$locationProvider.html5Mode({
+	       enabled: true,
+	       requireBase: false
+	});
+	$locationProvider.hashPrefix('');
+	
     $routeProvider
     .when("/", {
         templateUrl : "home.html"
     })
     .when("/user", {
-        templateUrl : "user.html"
+        templateUrl : "view/user.html",
+        controller: "userCtrl"
     })
     .when("/book", {
-        templateUrl : "book.html"
+        templateUrl : "view/book.html",
+        controller: "bookCtrl"
     })
     .when("/reservation", {
-        templateUrl : "reservation.html"
+        templateUrl : "view/reservation.html",
+        controller: "reservationCtrl"
     })
     .when("/author", {
-        templateUrl : "author.html"
-    });
+        templateUrl : "view/author.html",
+        controller: "authorCtrl"
+    }).otherwise({
+		redirectTo : '/'
+	});
 });

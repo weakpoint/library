@@ -37,11 +37,11 @@ private AuthorRepository authorRepository;
 	
 	@RequestMapping("/init")
 	public String setupDB(){
-		Book book = bookRepository.getOne("00001");
+	/*	Book book = bookRepository.getOne("00001");
 		if (book != null) {
 			return "juuu";
 		}
-		List<User> users = setupUsers();
+		*/List<User> users = setupUsers();
 		List<Author> authors = setupAuthors();
 		List<Book> books = setupBooks(authors);
 		setupReservations(users, books);

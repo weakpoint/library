@@ -4,27 +4,35 @@
 <title>Library</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
 <script src="js/app.js"></script>
 <script src="js/config.js"></script>
-
+<script src="js/controller/authorController.js"></script>
+<script src="js/controller/bookController.js"></script>
+<script src="js/controller/reservationController.js"></script>
+<script src="js/controller/userController.js"></script>
+<base href=""/>
 </head>
+
 <body ng-app="library">
 
+    <header><nav>
+    <a href="/">Main</a>|
+    <a href="/user">Users</a>|
+    <a href="/author">Authors</a>|
+    <a href="/book">Books</a>|
+    <a href="/reservation">Reservations</a>
+    </nav></header>
 
+	<section class="content fit-navigation-and-footer">
+        <div ng-view></div>
+	</section>
 
-<div >
-  <p>Name: <input type="text" ng-model="name"></p>
-  <p data-ng-bind="name"></p>
-  
-</div>
-    <p>All users: <a href="#!user">here</a></p>
-    <p>All authors: <a href="#!author">here</a></p>
-    <p>All books: <a href="#!book">here</a></p>
-    <p>All reservations: <a href="#!reservation">here</a></p>
-    
-    <p>Injection:</p>
-     <div> <ng-view></ng-view></div> 
+	<footer>Library App</footer>
 </body>
 </html>
