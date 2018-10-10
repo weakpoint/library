@@ -1,9 +1,11 @@
 package pl.weakpoint.library.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
@@ -22,8 +24,9 @@ public class Book implements Serializable{
 	private String name;
 	
 	
+	@ManyToMany
 	@NotNull
-	private Author author;
+	private List<Author> authors;
 	
 	@Version
     private long version;
@@ -44,12 +47,12 @@ public class Book implements Serializable{
 		this.name = name;
 	}
 
-	public Author getAuthor() {
-		return author;
+	public List<Author> getAuthors() {
+		return authors;
 	}
 
-	public void setAuthor(Author author) {
-		this.author = author;
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
 	}
 
 	public long getVersion() {

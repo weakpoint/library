@@ -19,7 +19,7 @@ public class Author implements Serializable{
 
 	@Id
 	@NotNull
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="AuthorSeq")
 	private Long id;
 	
 	@NotNull

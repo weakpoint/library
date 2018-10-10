@@ -3,6 +3,8 @@ package pl.weakpoint.library.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 import javax.validation.constraints.Email;
@@ -16,8 +18,12 @@ public class User implements Serializable {
 	 /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
     
-    /** The email. */
     @Id
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="UserSeq")
+    private Long id;
+    
+    /** The email. */
     @NotNull
     @Email
     private String email;
@@ -43,6 +49,14 @@ public class User implements Serializable {
     /** The version. */
     @Version
     long version;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;

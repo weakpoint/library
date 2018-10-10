@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,11 +36,11 @@ private AuthorRepository authorRepository;
 	
 	@RequestMapping("/init")
 	public String setupDB(){
-	/*	Book book = bookRepository.getOne("00001");
-		if (book != null) {
-			return "juuu";
-		}
-		*/List<User> users = setupUsers();
+//		Book book = bookRepository.getOne("00001");
+//		if (book != null) {
+//			return "juuu";
+//		}
+		List<User> users = setupUsers();
 		List<Author> authors = setupAuthors();
 		List<Book> books = setupBooks(authors);
 		setupReservations(users, books);
@@ -122,7 +121,7 @@ private AuthorRepository authorRepository;
 		Book book = new Book();
 		book.setIsbn(isbn);
 		book.setName(name);
-		book.setAuthor(author);
+		book.setAuthors(new ArrayList<>(Arrays.asList(author)));
 		return book;
 	}
 	
