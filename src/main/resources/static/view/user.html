@@ -1,1 +1,26 @@
 <h1>Users: </h1>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>E-mail</th>
+			<th>Name</th>
+			<th>Last Name</th>
+			<th>Phone</th>
+			<th>Deleted</th>
+			<th>Version</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in users">
+			<td>{{user.id}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.firstName}}</td>
+			<td>{{user.lastName}}</td>
+			<td>{{user.phone}}</td>
+			<td>{{user.deleted}}</td>
+			<td>{{user.version}}</td>
+		</tr>
+	</tbody>
+</table>

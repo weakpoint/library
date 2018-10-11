@@ -15,7 +15,15 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl : "view/user.html",
         controller: "userCtrl"
     })
+    .when("/user/:ID", {
+        templateUrl : "view/user.html",
+        controller: "userCtrl"
+    })
     .when("/book", {
+        templateUrl : "view/book.html",
+        controller: "bookCtrl"
+    })
+    .when("/book/:ID", {
         templateUrl : "view/book.html",
         controller: "bookCtrl"
     })
@@ -24,6 +32,10 @@ app.config(function($routeProvider, $locationProvider) {
         controller: "reservationCtrl"
     })
     .when("/author", {
+        templateUrl : "view/author.html",
+        controller: "authorCtrl"
+    })
+    .when("/author/:ID", {
         templateUrl : "view/author.html",
         controller: "authorCtrl"
     })
