@@ -1,6 +1,7 @@
 package pl.weakpoint.library.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -37,8 +38,8 @@ public class UserServiceImpl implements UserService {
 
 
 	@Override
-	public User getUserById(String id) {
-		return userRepository.getOne(id);
+	public Optional<User> getUserById(String id) {
+		return userRepository.findById(Long.parseLong(id));
 		
 	}
 

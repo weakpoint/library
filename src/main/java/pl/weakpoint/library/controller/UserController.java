@@ -1,6 +1,7 @@
 package pl.weakpoint.library.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +25,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User getUser(@PathVariable(value="id") String id){
+	public Optional<User> getUser(@PathVariable(value="id") String id){
 		return userService.getUserById(id);
 	}
 }

@@ -9,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 @Entity
+@JsonAutoDetect
 public class Author implements Serializable{
 	
 	/**

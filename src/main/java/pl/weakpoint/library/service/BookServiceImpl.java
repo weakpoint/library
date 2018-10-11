@@ -1,6 +1,7 @@
 package pl.weakpoint.library.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -22,5 +23,9 @@ public class BookServiceImpl implements BookService{
 		return bookRepository.findAll();
 	}
 	
-	
+	@Override
+	public Optional<Book> getBookByIsbn(String isbn) {
+		return bookRepository.findById(isbn);
+		
+	}
 }

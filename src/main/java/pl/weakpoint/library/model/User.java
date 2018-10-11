@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class User implements Serializable {
 	 /** The Constant serialVersionUID. */
-    private static final long serialVersionUID = 1L;
+    public static final long serialVersionUID = 1L;
     
     @Id
     @NotNull
